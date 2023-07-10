@@ -25,7 +25,7 @@ class TourismObjectStoreRequest extends FormRequest
   {
     return [
       'name'    => 'required|unique:tourism_objects|max:255',
-      'address' => 'required|unique:tourism_objects|max:255',
+      'address' => 'required|max:255',
     ];
   }
 }

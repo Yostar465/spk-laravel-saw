@@ -28,7 +28,7 @@ class TourismObjectUpdateRequest extends FormRequest
 
     return [
       'name'    => 'required|max:255|unique:tourism_objects,name,' . $id,
-      'address' => 'required|max:255|unique:tourism_objects,address,' . $id,
+      'address' => 'required|max:255' . $id,
     ];
   }
 }

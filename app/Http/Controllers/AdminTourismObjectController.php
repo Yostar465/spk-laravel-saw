@@ -14,7 +14,7 @@ class AdminTourismObjectController extends Controller
     $this->authorize('viewAny', TourismObject::class);
 
     return view('dashboard.tourism-object.index', [
-      'title' => 'Tourism Objects',
+      'title' => 'Products',
       'objects' => TourismObject::all()
     ]);
   }
@@ -24,7 +24,7 @@ class AdminTourismObjectController extends Controller
     $this->authorize('create', TourismObject::class);
 
     return view('dashboard.tourism-object.create', [
-      'title' => 'Create Tourism Objects',
+      'title' => 'Create Products',
     ]);
   }
 
@@ -37,7 +37,7 @@ class AdminTourismObjectController extends Controller
     TourismObject::create($validate);
 
     return redirect('/dashboard/tourism-objects')
-      ->with('success', 'The new tourism object has been added!');
+      ->with('success', 'The new Products has been added!');
   }
 
   public function edit(TourismObject $tourismObject)
@@ -60,7 +60,7 @@ class AdminTourismObjectController extends Controller
       ->update($validate);
 
     return redirect('/dashboard/tourism-objects')
-      ->with('success', 'The selected tourism object has been updated!');
+      ->with('success', 'The selected Products has been updated!');
   }
 
   public function destroy(TourismObject $tourismObject)
@@ -70,6 +70,6 @@ class AdminTourismObjectController extends Controller
     TourismObject::destroy($tourismObject->id);
 
     return redirect('/dashboard/tourism-objects')
-      ->with('success', 'The selected tourism object has been deleted!');
+      ->with('success', 'The selected Products has been deleted!');
   }
 }
